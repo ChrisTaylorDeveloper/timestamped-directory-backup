@@ -12,7 +12,7 @@ mkdir "$copy_to_dir"
 
 cp -a "$dir_to_copy"/. "$copy_to_dir"
 
-diff --brief --recursive "$dir_to_copy" "$copy_to_dir"
+diff --brief --recursive --no-dereference "$dir_to_copy" "$copy_to_dir"
 status=$?
 
 [ $status -eq 0 ] && echo SUCCESS "$copy_to_dir" || echo FAILURE! Copied directory differs from original.
